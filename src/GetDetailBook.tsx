@@ -51,7 +51,6 @@ export default function DetailDataBuku() {
             <h1> Detail Buku </h1>
             <div>
                 <h2> {books.judul} </h2>
-                <hr style={{borderColor: '#333' }}> </hr>
 
                 <p> <strong> {books.deskripsi} </strong> </p>
                 <p> <strong> {books.tahun} </strong> </p>
@@ -60,7 +59,7 @@ export default function DetailDataBuku() {
             </div>
 
             <div style={{ marginTop: '20px'}}>
-                <button onClick={() => navigate("/")}> Kembali ke Daftar</button>
+                <button onClick={() => navigate("/")}> Kembali ke Daftar </button>
             </div>
         </div>
     )

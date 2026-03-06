@@ -24,14 +24,14 @@ export default function ShowAllBook () {
             if (!response.ok) return;
 
             const data = await response.json();
-            setBooks(Array.isArray(data) ? data : data.record || []);
+            setBooks(Array.isArray(data) ? data : data.data || []);
         } catch (error) {
             console.error("Terjadi kesalahan: ", error);
         }
     };
 
     useEffect (() => {
-        DaftarBuku
+        DaftarBuku();
     }, []);
 
     return (
@@ -48,6 +48,12 @@ export default function ShowAllBook () {
                                 <p> {book.kategori} </p>
                                 <p> {book.deskripsi} </p>
                                 <p> {book.status} </p>
+                                {/* <p> <img src={book.imageUrl}> </img> </p> */}
+                            </div>
+
+                            <div className="button-group">
+                                <button onClick={() => navigate(`/GetDetailBook/${book.id}`)}> Detail Buku </button>
+                                <button onClick={() => navigate(`/UpdateBook/${book.id}`)}> Update </button>
                             </div>
                         </li>
                     ))}
