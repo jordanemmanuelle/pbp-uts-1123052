@@ -52,7 +52,7 @@ export default function UpdateBuku() {
             navigate("/");
         } catch (error) {
             console.error ("Ada error: ", error);
-            alert("gagal update data buku")
+            alert("Gagal update data buku")
         }
     };
 
